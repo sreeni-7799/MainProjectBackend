@@ -2,7 +2,7 @@ package com.experion.mainbackend.service;
 
 import com.experion.mainbackend.entity.Product;
 import com.experion.mainbackend.helper.Helper;
-import com.experion.mainbackend.repo.ProductRepo;
+import com.experion.mainbackend.dao.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
