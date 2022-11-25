@@ -3,10 +3,8 @@ package com.experion.mainbackend.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "chittymanager")
@@ -31,12 +29,16 @@ public class Manager {
     @Column(name="chitty_id")
     private Long chitty_id;
 
-    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Long chitty_id) {
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "manager")
+    private Set<Chitty> chits;
+
+    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Long chitty_id, Set<Chitty> chits) {
         this.emp_id = emp_id;
         this.firstName = firstName;
         this.emp_lastname = emp_lastname;
         this.email = email;
         this.chitty_id = chitty_id;
+        this.chits = chits;
     }
 
     public Manager() {
@@ -82,4 +84,11 @@ public class Manager {
         this.chitty_id = chitty_id;
     }
 
+    public Set<Chitty> getChits() {
+        return chits;
+    }
+
+    public void setChits(Set<Chitty> chits) {
+        this.chits = chits;
+    }
 }

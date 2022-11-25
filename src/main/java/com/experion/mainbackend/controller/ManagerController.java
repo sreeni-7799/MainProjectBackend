@@ -36,7 +36,7 @@ public class ManagerController {
 
 
     @GetMapping("*/products")
-    public List<Manager> getAllProduct() {
+    public List<Manager> getAllManagers() {
         return this.managerService.getAllManagers();
     }
 
