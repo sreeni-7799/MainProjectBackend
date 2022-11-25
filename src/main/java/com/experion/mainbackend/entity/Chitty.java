@@ -30,8 +30,8 @@ public class Chitty {
     @Column(name = "total_amount")
     private Long totalAmount;
 
-    @Column(name = "chitty_manager_id")
-    private Long chittyManagerId;
-
+    @ManyToOne
+    @JoinColumn(name = "chitty_manager_id",nullable = false)
+    private Manager manager;
 
 }
