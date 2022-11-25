@@ -1,8 +1,8 @@
 package com.experion.mainbackend.controller;
 
-import com.experion.mainbackend.entity.Product;
+import com.experion.mainbackend.entity.Manager;
 import com.experion.mainbackend.helper.Helper;
-import com.experion.mainbackend.service.ProductService;
+import com.experion.mainbackend.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +14,10 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class ProductController {
+public class ManagerController {
 
     @Autowired
-    private ProductService productService;
+    private ManagerService managerService;
 
     @PostMapping("/chitty/upload")
 
@@ -25,7 +25,7 @@ public class ProductController {
         if (Helper.checkExcelFormat(file)) {
             //true
 
-            this.productService.save(file);
+            this.managerService.save(file);
 
             return ResponseEntity.ok(Map.of("message", "File is uploaded and data is saved to db"));
 
@@ -35,9 +35,9 @@ public class ProductController {
     }
 
 
-    @GetMapping("*/managers")
-    public List<Product> getAllProduct() {
-        return this.productService.getAllProducts();
+    @GetMapping("*/products")
+    public List<Manager> getAllProduct() {
+        return this.managerService.getAllManagers();
     }
 
 }
