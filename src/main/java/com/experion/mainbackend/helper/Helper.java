@@ -1,6 +1,6 @@
 package com.experion.mainbackend.helper;
 
-import com.experion.mainbackend.entity.Product;
+import com.experion.mainbackend.entity.Manager;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -31,8 +31,8 @@ public class Helper {
 
     //convert excel to list of products
 
-    public static List<Product> convertExcelToListOfProduct(InputStream is) {
-        List<Product> list = new ArrayList<>();
+    public static List<Manager> convertExcelToListOfManager(InputStream is) {
+        List<Manager> list = new ArrayList<>();
 
         try {
 
@@ -56,7 +56,7 @@ public class Helper {
 
                 int cid = 0;
 
-                Product p = new Product();
+                Manager p = new Manager();
 
                 while (cells.hasNext()) {
                     Cell cell = cells.next();

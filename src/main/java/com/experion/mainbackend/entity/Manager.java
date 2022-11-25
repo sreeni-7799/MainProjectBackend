@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "chittymanager")
 @Getter
 @Setter
-public class Product {
+public class Manager {
 
     @Id
     @Column(name="emp_id")
@@ -31,7 +31,7 @@ public class Product {
     @Column(name="chitty_id")
     private Long chitty_id;
 
-    public Product(Long emp_id, String firstName, String emp_lastname, String email, Long chitty_id) {
+    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Long chitty_id) {
         this.emp_id = emp_id;
         this.firstName = firstName;
         this.emp_lastname = emp_lastname;
@@ -39,7 +39,7 @@ public class Product {
         this.chitty_id = chitty_id;
     }
 
-    public Product() {
+    public Manager() {
     }
 
     public Long getEmp_id() {
