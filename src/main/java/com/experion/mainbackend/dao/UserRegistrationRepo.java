@@ -1,4 +1,4 @@
-package com.experion.mainbackend.repo;
+package com.experion.mainbackend.dao;
 
 import com.experion.mainbackend.entity.UserRegistration;
 import org.springframework.data.jpa.repository.JpaRepository;

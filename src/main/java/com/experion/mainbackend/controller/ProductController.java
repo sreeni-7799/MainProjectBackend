@@ -35,7 +35,7 @@ public class ProductController {
     }
 
 
-    @GetMapping("*/managers")
+    @GetMapping("*/products")
     public List<Product> getAllProduct() {
         return this.productService.getAllProducts();
     }

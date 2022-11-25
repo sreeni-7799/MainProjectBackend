@@ -20,7 +20,7 @@ public class Product {
 
 
     @Column(name="emp_firstname")
-    private String emp_firstname;
+    private String firstName;
 
     @Column(name="emp_lastname")
     private String emp_lastname;
@@ -31,9 +31,9 @@ public class Product {
     @Column(name="chitty_id")
     private Long chitty_id;
 
-    public Product(Long emp_id, String emp_firstname, String emp_lastname, String email, Long chitty_id) {
+    public Product(Long emp_id, String firstName, String emp_lastname, String email, Long chitty_id) {
         this.emp_id = emp_id;
-        this.emp_firstname = emp_firstname;
+        this.firstName = firstName;
         this.emp_lastname = emp_lastname;
         this.email = email;
         this.chitty_id = chitty_id;
@@ -50,12 +50,12 @@ public class Product {
         this.emp_id = emp_id;
     }
 
-    public String getEmp_firstname() {
-        return emp_firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setEmp_firstname(String emp_firstname) {
-        this.emp_firstname = emp_firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getEmp_lastname() {

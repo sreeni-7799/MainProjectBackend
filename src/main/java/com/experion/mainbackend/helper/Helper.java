@@ -66,7 +66,7 @@ public class Helper {
                             p.setEmp_id((long) cell.getNumericCellValue());
                             break;
                         case 1:
-                            p.setEmp_firstname(cell.getStringCellValue());
+                            p.setFirstName(cell.getStringCellValue());
                             break;
                         case 2:
                             p.setEmp_lastname(cell.getStringCellValue());
