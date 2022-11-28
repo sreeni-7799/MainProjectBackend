@@ -3,6 +3,7 @@ package com.experion.mainbackend.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -33,5 +34,11 @@ public class Chitty {
     @ManyToOne
     @JoinColumn(name = "chitty_manager_id",nullable = false)
     private Manager manager;
+
+    @Column(name = "launch_date")
+    private Date launchDate;
+
+    @Column(name = "start_date")
+    private Date startDate;
 
 }

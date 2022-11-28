@@ -19,7 +19,7 @@ public class ManagerController {
     @Autowired
     private ManagerService managerService;
 
-    @PostMapping("/chitty/upload")
+    @PostMapping("*/managers/upload")
 
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file) {
         if (Helper.checkExcelFormat(file)) {
