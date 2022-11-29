@@ -1,6 +1,7 @@
 package com.experion.mainbackend.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -36,9 +37,11 @@ public class Chitty {
     private Manager manager;
 
     @Column(name = "launch_date")
+    @CreationTimestamp
     private Date launchDate;
 
     @Column(name = "start_date")
+    @CreationTimestamp
     private Date startDate;
 
 }

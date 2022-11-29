@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -26,18 +27,14 @@ public class Manager {
     @Column(name="email")
     private String email;
 
-    @Column(name="chitty_id")
-    private Long chitty_id;
-
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "manager")
-    private Set<Chitty> chits;
+    private Set<Chitty> chits = new HashSet<>();
 
-    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Long chitty_id, Set<Chitty> chits) {
+    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Set<Chitty> chits) {
         this.emp_id = emp_id;
         this.firstName = firstName;
         this.emp_lastname = emp_lastname;
         this.email = email;
-        this.chitty_id = chitty_id;
         this.chits = chits;
     }
 
@@ -74,14 +71,6 @@ public class Manager {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Long getChitty_id() {
-        return chitty_id;
-    }
-
-    public void setChitty_id(Long chitty_id) {
-        this.chitty_id = chitty_id;
     }
 
     public Set<Chitty> getChits() {

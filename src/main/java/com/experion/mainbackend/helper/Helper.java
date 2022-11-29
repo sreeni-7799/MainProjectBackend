@@ -74,9 +74,6 @@ public class Helper {
                         case 3:
                             p.setEmail(cell.getStringCellValue());
                             break;
-                        case 4:
-                            p.setChitty_id((long) cell.getNumericCellValue());
-                            break;
                         default:
                             break;
                     }
