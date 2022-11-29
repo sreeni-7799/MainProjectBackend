@@ -1,19 +1,24 @@
 package com.experion.mainbackend.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "chittymanager")
 @Getter
 @Setter
+
 public class Manager {
 
     @Id
     @Column(name="emp_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long emp_id;
 
 
@@ -30,7 +35,7 @@ public class Manager {
     private Long chitty_id;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "manager")
-    private Set<Chitty> chits;
+    private Set<Chitty> chits= new HashSet<>();
 
     public Manager(Long emp_id, String firstName, String emp_lastname, String email, Long chitty_id, Set<Chitty> chits) {
         this.emp_id = emp_id;

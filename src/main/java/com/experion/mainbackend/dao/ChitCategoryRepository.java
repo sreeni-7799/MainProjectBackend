@@ -10,7 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "*")
-@RepositoryRestResource(collectionResourceRel = "chittyCategory", path = "chittyCategory")
+@RepositoryRestResource(collectionResourceRel = "chittycategory", path = "chittycategory")
 public interface ChitCategoryRepository extends JpaRepository<ChittyCategory,Long> {
     Page<ChittyCategory> findBycategoryName(@Param("name") String categoryName, Pageable pageable);
 }
