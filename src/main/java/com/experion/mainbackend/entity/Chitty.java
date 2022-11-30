@@ -1,8 +1,10 @@
 package com.experion.mainbackend.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -20,7 +22,7 @@ public class Chitty {
     @Column(name = "duration")
     private Long duration;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id",nullable = false)
     private ChittyCategory category;
 
@@ -30,8 +32,30 @@ public class Chitty {
     @Column(name = "total_amount")
     private Long totalAmount;
 
-    @ManyToOne
-    @JoinColumn(name = "chitty_manager_id",nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn(name = "chitty_manager_id")
     private Manager manager;
 
+    @Column(name="date_created")
+    @CreationTimestamp
+    private Date dateCreated;
+
+    @Column(name="date_started")
+    @CreationTimestamp
+    private Date dateStarted;
+
+    public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, Long totalAmount, Manager manager, Date dateCreated, Date dateStarted) {
+        this.chitNumber = chitNumber;
+        this.installment = installment;
+        this.duration = duration;
+        this.category = category;
+        this.numberOfChittal = numberOfChittal;
+        this.totalAmount = totalAmount;
+        this.manager = manager;
+        this.dateCreated = dateCreated;
+        this.dateStarted = dateStarted;
+    }
+
+    public Chitty() {
+    }
 }
