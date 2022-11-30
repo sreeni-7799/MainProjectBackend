@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource(collectionResourceRel = "chittyaccountdetails",path="chittyaccountdetails")
 public interface ChittyAccountDetailsRepo extends JpaRepository<ChittyAccountDetails,Long>
 {
+
 }
 
 
