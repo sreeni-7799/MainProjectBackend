@@ -7,5 +7,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "*")
 @RepositoryRestResource(collectionResourceRel = "userprofile",path="user-profile")
-public interface UserRegistrationRepo extends JpaRepository<UserRegistration,Long> {
+public interface UserRegistrationRepo extends JpaRepository<UserRegistration,Long>
+{
 }
