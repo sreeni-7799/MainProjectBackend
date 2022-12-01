@@ -14,9 +14,10 @@ public class ChittyPost {
     private Long installment;
     private Long duration;
     private Manager manager;
+//    private Long manager_id;
     private Integer numberOfChittal;
     private ChittyCategory category;
     private Long totalAmount;
-    private Date dateCreated;
-    private Date dateStarted;
+    private Date launchDate;
+    private Date startDate;
 }

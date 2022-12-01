@@ -1,6 +1,7 @@
 package com.experion.mainbackend.entity;
 
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -22,8 +23,10 @@ public class Chitty {
     @Column(name = "duration")
     private Long duration;
 
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id",nullable = false)
+    @JsonIgnore
     private ChittyCategory category;
 
     @Column(name = "number_of_chittals")
@@ -32,19 +35,20 @@ public class Chitty {
     @Column(name = "total_amount")
     private Long totalAmount;
 
+
+
     @ManyToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn(name = "chitty_manager_id")
+    @PrimaryKeyJoinColumn(name = "manager_emp_id")
+    @JsonIgnore
     private Manager manager;
 
-    @Column(name="date_created")
-    @CreationTimestamp
-    private Date dateCreated;
+    @Column(name="launch_date")
+    private Date launchDate;
 
-    @Column(name="date_started")
-    @CreationTimestamp
-    private Date dateStarted;
+    @Column(name="start_date")
+    private Date startDate;
 
-    public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, Long totalAmount, Manager manager, Date dateCreated, Date dateStarted) {
+    public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, Long totalAmount, Manager manager, Date launchDate, Date startDate) {
         this.chitNumber = chitNumber;
         this.installment = installment;
         this.duration = duration;
@@ -52,8 +56,8 @@ public class Chitty {
         this.numberOfChittal = numberOfChittal;
         this.totalAmount = totalAmount;
         this.manager = manager;
-        this.dateCreated = dateCreated;
-        this.dateStarted = dateStarted;
+        this.launchDate = launchDate;
+        this.startDate = startDate;
     }
 
     public Chitty() {
