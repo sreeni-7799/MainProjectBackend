@@ -35,4 +35,11 @@ public class ChittyServiceImpl implements ChittyService{
         chitRepository.save(chitty);
         return null;
     }
+
+    @Override
+    public String updateChitty(ChittyPost chittyPost) {
+        return null;
+    }
+
+
 }

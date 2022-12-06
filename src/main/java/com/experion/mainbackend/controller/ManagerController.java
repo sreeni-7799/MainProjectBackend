@@ -35,9 +35,12 @@ public class ManagerController {
     }
 
 
-    @GetMapping("*/managers")
-    public List<Manager> getAllManagers() {
-        return this.managerService.getAllManagers();
-    }
+//    @GetMapping("*/managers")
+//    public List<Manager> getAllManagers() {
+//        return this.managerService.getAllManagers();
+//    }
+
+
+
 
 }

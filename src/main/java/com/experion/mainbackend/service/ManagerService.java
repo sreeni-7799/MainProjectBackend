@@ -32,5 +32,9 @@ public class ManagerService {
         return this.managerRepo.findAll();
     }
 
+    public void add(Manager manager){
+        this.managerRepo.save(manager);
+    }
+
 
 }
