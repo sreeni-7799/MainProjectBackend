@@ -36,15 +36,15 @@ public class Chitty {
     @PrimaryKeyJoinColumn(name = "chitty_manager_id")
     private Manager manager;
 
-    @Column(name="date_created")
+    @Column(name="launch_date")
     @CreationTimestamp
-    private Date dateCreated;
+    private Date launchDate;
 
-    @Column(name="date_started")
+    @Column(name="start_date")
     @CreationTimestamp
-    private Date dateStarted;
+    private Date startDate;
 
-    public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, Long totalAmount, Manager manager, Date dateCreated, Date dateStarted) {
+    public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, Long totalAmount, Manager manager, Date launchDate, Date startDate) {
         this.chitNumber = chitNumber;
         this.installment = installment;
         this.duration = duration;
@@ -52,10 +52,82 @@ public class Chitty {
         this.numberOfChittal = numberOfChittal;
         this.totalAmount = totalAmount;
         this.manager = manager;
-        this.dateCreated = dateCreated;
-        this.dateStarted = dateStarted;
+        this.launchDate = launchDate;
+        this.startDate = startDate;
     }
 
     public Chitty() {
+    }
+
+    public Long getChitNumber() {
+        return chitNumber;
+    }
+
+    public void setChitNumber(Long chitNumber) {
+        this.chitNumber = chitNumber;
+    }
+
+    public Long getInstallment() {
+        return installment;
+    }
+
+    public void setInstallment(Long installment) {
+        this.installment = installment;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
+    }
+
+    public ChittyCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ChittyCategory category) {
+        this.category = category;
+    }
+
+    public int getNumberOfChittal() {
+        return numberOfChittal;
+    }
+
+    public void setNumberOfChittal(int numberOfChittal) {
+        this.numberOfChittal = numberOfChittal;
+    }
+
+    public Long getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Long totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
+
+    public Date getLaunchDate() {
+        return launchDate;
+    }
+
+    public void setLaunchDate(Date launchDate) {
+        this.launchDate = launchDate;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 }

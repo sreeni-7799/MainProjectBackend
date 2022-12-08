@@ -27,10 +27,10 @@ public class ChittyServiceImpl implements ChittyService{
         chitty.setNumberOfChittal(chittyPost.getNumberOfChittal());
         chitty.setCategory(chittyPost.getCategory());
         chitty.setTotalAmount(chittyPost.getTotalAmount());
-        chitty.setDateCreated(chittyPost.getDateCreated());
-        chitty.setDateStarted(chittyPost.getDateStarted());
+        chitty.setLaunchDate(chittyPost.getLaunchDate());
+        chitty.setStartDate(chittyPost.getStartDate());
 
-Manager manager=chittyPost.getManager();
+        Manager manager=chittyPost.getManager();
         chitRepository.save(chitty);
         return null;
     }

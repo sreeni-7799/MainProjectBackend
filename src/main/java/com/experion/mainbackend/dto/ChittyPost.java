@@ -17,6 +17,6 @@ public class ChittyPost {
     private Integer numberOfChittal;
     private ChittyCategory category;
     private Long totalAmount;
-    private Date dateCreated;
-    private Date dateStarted;
+    private Date launchDate;
+    private Date startDate;
 }
