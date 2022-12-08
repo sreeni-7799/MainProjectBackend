@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -18,7 +19,6 @@ public class Manager {
 
     @Id
     @Column(name="emp_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long emp_id;
 
 
@@ -32,10 +32,18 @@ public class Manager {
     private String email;
 
 
+
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "manager")
     private Set<Chitty> chits= new HashSet<>();
 
     public Manager(Long emp_id, String firstName, String emp_lastname, String email,Set<Chitty> chits) {
+
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "manager")
+    private Set<Chitty> chits= new HashSet<>();
+
+    public Manager(Long emp_id, String firstName, String emp_lastname, String email, Set<Chitty> chits) {
+
         this.emp_id = emp_id;
         this.firstName = firstName;
         this.emp_lastname = emp_lastname;

@@ -20,8 +20,8 @@ public class ManagerService {
     public void save(MultipartFile file) {
 
         try {
-            List<Manager> products = Helper.convertExcelToListOfManager(file.getInputStream());
-            this.managerRepo.saveAll(products);
+            List<Manager> managers = Helper.convertExcelToListOfManager(file.getInputStream());
+            this.managerRepo.saveAll(managers);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -30,6 +30,10 @@ public class ManagerService {
 
     public List<Manager> getAllManagers() {
         return this.managerRepo.findAll();
+    }
+
+    public void add(Manager manager){
+        this.managerRepo.save(manager);
     }
 
 

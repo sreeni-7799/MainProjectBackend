@@ -19,7 +19,11 @@ public class ManagerController {
     @Autowired
     private ManagerService managerService;
 
+
     @PostMapping("/managers/upload")
+
+    @PostMapping("*/managers/upload")
+
 
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file) {
         if (Helper.checkExcelFormat(file)) {
@@ -35,9 +39,18 @@ public class ManagerController {
     }
 
 
+
     @GetMapping("*/managers")
     public List<Manager> getAllManagers() {
         return this.managerService.getAllManagers();
     }
+
+//    @GetMapping("*/managers")
+//    public List<Manager> getAllManagers() {
+//        return this.managerService.getAllManagers();
+//    }
+
+
+
 
 }

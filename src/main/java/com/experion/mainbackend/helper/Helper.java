@@ -74,7 +74,10 @@ public class Helper {
                         case 3:
                             p.setEmail(cell.getStringCellValue());
                             break;
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                         default:
                             break;
                     }

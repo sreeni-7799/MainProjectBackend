@@ -1,6 +1,7 @@
 package com.experion.mainbackend.entity;
 
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -22,8 +23,10 @@ public class Chitty {
     @Column(name = "duration")
     private Long duration;
 
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id",nullable = false)
+    @JsonIgnore
     private ChittyCategory category;
 
     @Column(name = "number_of_chittals")
@@ -32,16 +35,25 @@ public class Chitty {
     @Column(name = "total_amount")
     private Long totalAmount;
 
+
+
     @ManyToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn(name = "chitty_manager_id")
+    @PrimaryKeyJoinColumn(name = "manager_emp_id")
+    @JsonIgnore
     private Manager manager;
 
     @Column(name="launch_date")
+
     @CreationTimestamp
     private Date launchDate;
 
     @Column(name="start_date")
     @CreationTimestamp
+
+    private Date launchDate;
+
+    @Column(name="start_date")
+
     private Date startDate;
 
     public Chitty(Long chitNumber, Long installment, Long duration, ChittyCategory category, int numberOfChittal, Long totalAmount, Manager manager, Date launchDate, Date startDate) {

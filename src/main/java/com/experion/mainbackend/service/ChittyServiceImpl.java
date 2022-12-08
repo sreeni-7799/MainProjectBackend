@@ -19,6 +19,7 @@ public class ChittyServiceImpl implements ChittyService{
 
     @Override
     public ChittyPostResponse saveChitty(ChittyPost chittyPost) {
+
         Chitty chitty=new Chitty();
         chitty.setChitNumber(chittyPost.getChitNumber());
         chitty.setInstallment(chittyPost.getInstallment());
@@ -29,9 +30,21 @@ public class ChittyServiceImpl implements ChittyService{
         chitty.setTotalAmount(chittyPost.getTotalAmount());
         chitty.setLaunchDate(chittyPost.getLaunchDate());
         chitty.setStartDate(chittyPost.getStartDate());
+<<<<<<< HEAD
 
         Manager manager=chittyPost.getManager();
+=======
+
+
+>>>>>>> master
         chitRepository.save(chitty);
         return null;
     }
+
+    @Override
+    public String updateChitty(ChittyPost chittyPost) {
+        return null;
+    }
+
+
 }

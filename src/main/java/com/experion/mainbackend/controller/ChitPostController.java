@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/chitty")
+
 public class ChitPostController {
 
     @Autowired
@@ -22,4 +23,9 @@ public class ChitPostController {
 
             return chittyPostResponse;
     }
+    @PutMapping("/updatedate")
+    public void updateChitty(@RequestBody ChittyPost chittyPost){
+        chittyService.updateChitty(chittyPost);
+    }
+
 }
